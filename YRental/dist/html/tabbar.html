@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>租号平台</title><link rel=stylesheet href=../css/tabbar-8f37346629.css><style>
+        .tc .tabIcon{width: 0.5rem;height: 0.5rem;background: url(../images/new/thisHome.png);background-repeat:no-repeat;background-size: cover;margin: 0.3rem auto 0}
+        .tc .tabIconOrder{width: 0.5rem;height: 0.5rem;background: url(../images/new/thisOrder.png);background-repeat:no-repeat;background-size: cover;margin: 0.3rem auto 0}
+        .tc .tabIconUser{width: 0.5rem;height: 0.5rem;background: url(../images/new/thisUser.png);background-repeat:no-repeat;background-size: cover;margin: 0.3rem auto 0}
+        .tab_index .tabIcon{width: 0.5rem;height: 0.5rem;background: url(../images/new/home.png);background-repeat:no-repeat;background-size: cover;margin: 0.3rem auto 0}
+        .tab_order .tabIconOrder{width: 0.5rem;height: 0.5rem;background: url(../images/new/order.png);background-repeat:no-repeat;background-size: cover;margin: 0.3rem auto 0}
+        .tab_mine .tabIconUser{width: 0.5rem;height: 0.5rem;background: url(../images/new/user.png);background-repeat:no-repeat;background-size: cover;margin: 0.3rem auto 0}
+    </style></head><body><div class="tab_box tc"><div class="tab_index tc"><div style="height: 0.5rem"><div class=tabIcon></div></div><div style="line-height: 0.6rem;font-size: 0.2rem">大厅</div></div><div class="tab_order tc"><div style="height: 0.5rem"><div class=tabIconOrder></div></div><div style="line-height: 0.6rem;font-size: 0.2rem">订单</div></div><div class="tab_mine tc"><div style="height: 0.5rem"><div class=tabIconUser></div></div><div style="line-height: 0.6rem;font-size: 0.2rem">我的</div></div></div></body><script>
+    $('.tab_index').click(function(){
+        window.location.href='search.html'
+    })
+    
+    $('.tab_order').click(function(){
+        window.location.href='orderDetail.html?isleased=1'
+    })
+    
+    $('.tab_mine').click(function(){
+        window.location.href='mine.html'
+    })
+</script></html>

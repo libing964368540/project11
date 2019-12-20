@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>资金明细</title>
+    <link rel="stylesheet" href="../css/config.css?v=1">
+    <link rel="stylesheet" href="../css/balance.css?v=1">
+</head>
+
+<body>
+    <div class="sumBg">
+        <div class="sumBalance">账号余额(元)</div>
+        <div class="sum_all"></div>
+    </div>
+
+    <!-- List -->
+    <div id="rentDom" onscroll="rentScroll(this);"></div>
+</body>
+<script src="../js/config.js?v=1"></script>
+<script src="../js/arttemplate.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/balance.js?v=1"></script>
+<script id='rent_at' type="text/html">
+    <%for(var i in data){%>
+        <div class="rowList">
+          <div class='balance_left'>
+              <div class='balanceBstate'>
+                {{if(data[i].bstate == 0)}}
+                {{data[i].bstate = '余额充值'}}
+                {{else if(data[i].bstate == 1)}}
+                {{data[i].bstate = '余额支付'}}
+                {{else if(data[i].bstate == 2)}}
+                {{data[i].bstate = '余额提现'}}
+                {{else if(data[i].bstate == 3)}}
+                {{data[i].bstate = '违规支付'}}
+                 {{/if}}
+              </div>
+              <div class='balanceTime'>{{data[i].balancetime}}</div>
+          </div>
+        <div class='balanceAmount'>
+            <% if(data[i].bstate == '余额充值'){%>
+            <div class='addddd'>+</div>
+            <% }else{%>
+            <div class='addddd'>-</div>
+            <% }%>
+            <div>{{(data[i].amount / 100 * 1).toFixed(2)}}</div>
+          </div>
+        </div>
+    <%}%>
+</script>
+
+
+</html>

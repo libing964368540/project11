@@ -1,0 +1,602 @@
+.headBox{
+    width: 10.2rem;
+    height: 5.3rem;
+    display: flex;
+    margin: 0 auto;
+}
+.headBox_l{
+    margin: 0.65rem 0.2rem 1.05rem 0.6rem;
+}
+.headBox_l,.headBox_r{
+    width: 2.4rem;
+    position: relative;
+    color: #999999;
+    font-size: 0.3rem;
+    line-height: 0.4rem;
+}
+.headBox_c{
+    width: 3.8rem;
+    background-image: url('../images/detail_center1.png');
+    background-repeat: no-repeat;
+    background-position: 0 0.65rem;
+    background-size: 3.8rem auto ;
+    font-size: 0.3rem;
+    font-weight: 900;
+    color: #ffffff;
+    /* text-align: center; */
+    padding-top: 9.6%;
+    /* text-indent: -0.05rem; */
+}
+
+.danImg >img{
+    display: block;
+    width: auto;
+    height: 2rem;
+    margin: 0 auto;
+    margin-top: 1rem
+}
+
+.dantext{
+    font-size: 0.3rem;
+    color: #666666;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-weight: 400;
+    text-indent: 0;
+    text-align: center
+}
+
+.rankImg>img{
+    display: block;
+    width: 1.64rem;
+    height: 0.62rem;
+    margin: 0 auto;
+    /* margin-top: 0.25rem */
+}
+
+.headBox_r{
+    margin: 0.65rem 0.6rem 1.05rem 0.2rem;
+}
+
+.headBox_circle{
+    border-radius: 100%;
+    border: 0.04rem solid #fae0a5;
+    width: 1.52rem;
+    height: 0.72rem;
+    position: absolute;
+    padding: 0.4rem 0;
+    background: #ffffff;
+    font-weight: 900
+} 
+
+.cirlceNum{
+    font-size: 0.4rem;
+    color: #333333;
+}
+
+.headBox_line_l,.headBox_line_r{
+    border-right: 0.02rem solid #fae0a5;
+    height: 0.6rem;
+    width: 0.02rem;
+    position: absolute;
+   
+}
+
+.headBox_line_l{
+    transform: rotate(30deg);
+    top: 1.5rem;
+    left: 1.2rem;
+}
+
+.headBox_line_r{
+    transform: rotate(-30deg);
+    top: 1.5rem;
+    right: 1.2rem;
+}
+
+.tips{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.36rem;
+    color: #666666;
+    padding:0 0.3rem;
+    height: 0.36rem;
+    line-height: 0.36rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 0.2rem solid #f2f2f2;
+}
+
+.tips > div {
+    display: flex;
+}
+
+.tips > div > span{
+    color: #009e02;
+}
+
+.tips > div > img{
+    width: 0.36rem;
+    height: 0.36rem;
+    display: block;
+    margin-left: 0.15rem;
+}
+
+.heroBox{
+    padding: 0.1rem 0.3rem 0.5rem 0.3rem;
+    border-bottom: 0.2rem solid #f2f2f2;
+}
+
+.skinBox{
+    padding: 0 0.3rem 0.3rem 0.3rem;
+}
+
+.heroSkinBox_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.5rem;
+    columns: #333333; 
+    margin: 0.3rem 0
+}
+
+.heroSkinBox_top>div:nth-of-type(2){
+    font-size: 0.36rem;
+    color: #999999;
+    display: flex;
+    align-items: center;
+}
+
+.heroSkinBox_top>div:nth-of-type(2) >img{
+    width: 0.3rem;
+    height: 0.3rem;
+    display: block
+}
+
+
+
+#heroIconBox{
+    display: flex;
+    /*margin: 0 0.5rem;*/
+    /*padding: 0 0.5rem;*/
+}
+
+.heroItem{
+   font-size: 0.3rem;
+   color: #333333;
+   /*margin: 0 0.4rem 0 0;*/
+    flex: 1;
+}
+
+
+.heroItem:nth-last-of-type(1){
+    margin: 0
+}
+
+.heroItem > div:nth-of-type(2){
+    /*width: 1.2rem;*/
+    /*overflow: hidden;*/
+    /*white-space: nowrap*/
+}
+
+#skinIconBox{
+    display: flex;
+}
+
+.heroIcon > img{
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 0.2rem
+}
+
+.skinItem{
+    font-size: 0.3rem;
+    color: #333333;
+    margin: 0 0.4rem 0 0;
+ }
+ 
+ .skinItem:nth-last-of-type(1){
+     margin: 0
+ }
+ 
+ .skinItem > div:nth-of-type(2){
+     width: 2.2rem;
+     overflow: hidden;
+     white-space: nowrap
+ }
+ 
+ .skinIcon > img{
+     width: 2.2rem;
+     height: 3.70rem;
+     margin-bottom: 0.2rem
+ }
+
+ #rentDom{
+    height: calc(100vh - 1.5rem); 
+ }
+
+ .rentNow{
+     color: #ffffff;
+     height: 1.4rem;
+     line-height: 1.4rem;
+     background: #ff4538;
+      position: fixed;
+     width: 10.8rem;
+      bottom: 0;
+     font-size: 0.44rem;
+ }
+
+ .shadow{
+     background: #000000;
+     opacity: 0.4;
+     width: 10.8rem;
+     position: fixed;
+     top:0;
+     z-index: 1;
+ }
+
+ .choosePayType{
+     position: fixed;
+     bottom: 0;
+     width: 10.8rem;
+     /* padding: 0 0.3rem; */
+     background: rgb(236, 237, 238);
+     z-index: 2;
+     height: 0;
+     overflow: hidden;
+ }
+
+ .rentInfo{
+     font-size: 0.36rem;
+     color: #999999;
+     text-align: center;
+     display: flex;
+     justify-content: space-around;
+     width: 10.2rem;
+     margin: 1rem 0;
+ }
+
+ .rentInfo > div{
+    width: 2.8rem;
+ }
+ 
+ .rentInfo > div >span{
+    font-size: 0.45rem;
+    font-weight: 900;
+    color: #666666;
+ }
+
+ .rentInfo_tip{
+     font-size: 0.3rem;
+     color: #999999;
+     text-align: center;
+     height: 0.3rem;
+     line-height: 0.3rem;
+     padding-bottom: 0.4rem;
+ }
+
+ .payType{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size: 0.4rem;
+     line-height: 0.5rem;
+     font-weight: 900;
+     color: #333333;
+     margin: 0 0.4rem;
+     text-indent: 0.25rem;
+     height: 0.5rem;
+     padding: 0.6rem 0;
+     border-top: 0.02rem solid #f2f2f2;
+ }
+
+ .payType > div:nth-of-type(1) >img{
+    width: 0.5rem;
+    height: 0.5rem;
+    display: block;
+ }
+
+ .ischoose{
+     width: 0.5rem;
+     height: 0.5rem;
+     border: 0.02rem solid #999999;
+     border-radius: 100%;
+ }
+
+ .choosedPay{
+     background: url('../images/gou.png') no-repeat;
+     background-size: 0.5rem 0.5rem;
+     border-color: transparent
+ }
+
+ .btnBox{
+     display: flex;
+     /* margin: 0.4rem; */
+ }
+
+ .cancel{
+    /* color: #ff4837; */
+    /* margin-right: 0.4rem; */
+    background: #ffffff
+ }
+
+ .confirm{
+    color: #ffffff;
+    /* margin-right: 0.4rem; */
+    background: #ff4837
+ }
+
+ .confirm,.cancel{
+    width:50vw;
+    height: 1.52rem;
+    /* border-radius: 0.2rem; */
+    /* border: 0.04rem solid #ff443b; */
+    line-height: 1.52rem;
+    font-size: 0.45rem;
+ }
+ .btn_cancel{
+     display: inline;
+ }
+ .fontcolor{
+    display: inline;
+    color: #ff4538;
+ }
+
+ /* 文明租号约定 */
+ .rentAppoint{
+     width: 9rem;
+     height: 12.6rem;
+     /* background: linear-gradient(to bottom, #4092de, #ecfffd,#ffffff); */
+     background-image: url('../images/rentAppoint_bg.png') ;
+     background-repeat: no-repeat;
+     background-size: 9rem 12.6rem;
+     background-color: #ffffff;
+     position: fixed;
+     left: 0.9rem;
+     top: 10%;
+     border-radius:0.2rem;
+     z-index: 4;     
+     font-size: 0.4rem;
+     color: #666666;
+     line-height: 0.4rem;
+     display: none;
+ }
+
+ .rentAppoint_title{
+     font-size: 0.5rem;
+     color: #ffffff;
+     text-align: center;
+     height: 0.5rem;
+     line-height: 0.5rem;
+     margin: 0.65rem 0 1.8rem 0
+ }
+
+ .rentAppoint_mean{
+     margin: 0.6rem 0 0.6rem 0.7rem;
+ }
+ 
+ .rentAppoint ul{
+     background: none;
+     margin-left: 0.7rem;
+     overflow: hidden;
+     width: 7rem;
+ }
+
+ .rentAppoint li{
+     height: 0.5rem;
+     line-height: 0.5rem;
+     background:none;
+     list-style: disc ;
+     display: list-item;
+     margin-left: 0.7rem;
+     white-space: nowrap
+ }
+ 
+ .rentAppoint_lookfor{
+     margin:1rem 0.4rem 0 0.4rem;
+     font-size: 0.4rem;
+     color: #999999;
+ }
+ .rentAppoint_lookfor>a{
+     color: #2aa2f8;
+ }
+
+ .rentAppoint_btnBox{
+     font-size: 0.45rem;
+     color: #26a7ff;
+     line-height: 1.52rem;
+     display: flex;
+     margin: 0.5rem 0.4rem;
+     text-align: center;    
+ }
+
+ .rentAppoint_btnBox>div{
+     height: 1.52rem;
+     border:0.04rem solid #26a7ff; 
+     border-radius: 0.2rem;
+     width: 3.82rem;
+ }
+ .rentAppoint_btnBox>div:nth-of-type(1){
+     background: #f2f2f2;
+     margin-right: 0.4rem;
+ }
+
+ .rentAppoint_btnBox>div:nth-of-type(2){
+    background: #26a7ff;
+    color: #ffffff;
+}
+
+.zuLin{
+    position: absolute;
+    left: 2.6rem;
+    top: 2.85rem;
+}
+.rentTitle{
+    padding: 0 0 0 0.3rem;
+    font-size: 0.42rem;
+    color: #333;
+    height: 1.152rem;
+    white-space: normal;
+    overflow: hidden;
+}
+
+/* 租赁成功 */
+/* 遮罩层 */
+.exit_mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; 
+  }
+  /* 弹框 */
+  .login_exit{
+    width: 90vw;
+    height: 40vw;
+    position: fixed;
+    top: 70vw;
+    left: 5vw;
+    border-radius: 0.5125rem;
+    box-shadow: 1px 1px 2px 1px gainsboro;
+    background-color: white;
+    text-align: center;
+    line-height: 2rem;
+  }
+  /* 租赁成功 */
+  .login_exit span{ 
+    color: #8c8c8c;
+    font-size: 0.6rem;
+  }
+  /* 确定按钮 */
+  .exit{
+    position: absolute;
+    top: 23vw;
+    left: 10vw;
+    color: #ffffff;
+    background: rgb(227, 107, 102);
+    font-size: 0.6rem;
+    line-height: 1.4rem;
+    width: 80%;
+    border-radius: 1.4rem;
+  }
+
+.row_left{
+    margin-left: 0.3rem;
+}
+
+/* 租号方式 */
+.row_rent1{
+    background: rgb(236, 237, 238);
+}
+
+.rent_way{
+    background-color: #ffffff;
+    padding: 0.2rem;
+}
+.rent_way1{
+    margin-top: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 0.5rem;
+    color: #333;
+}
+.rent_way1 img{
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: -0.1rem 0.2rem 0 0;
+}
+
+/* 类型选择 */
+.choosedRow {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.2rem 0 0 0.2rem;
+  }
+  .typeChoosedBg {
+    border-radius: 0.08rem;
+    font-size: 4.3vw;
+    text-align: center;
+    color: #333333;
+    width: 28vw;
+    height: 26vw;
+    line-height: 9vw;
+    background: url(../images/28933.png)no-repeat;
+    background-size: 26vw 26vw;
+    background-position: 1.5vw 0vw;
+  }
+  
+  .typeChoosed {
+    background: url(../images/28934.png)no-repeat;
+    background-size: 26vw 26vw;
+    background-position: 1.5vw 0vw;
+  }
+  .typeChoosedBg>div:nth-of-type(1){
+    color: #ff4538;
+    margin: 0 0.1rem 0 0.3rem;
+    border-bottom: 1px solid rgb(220, 221, 221);
+  }
+.typeChoosedBg>div:nth-of-type(2){
+    font-weight: 500;
+}
+.typeChoosedBg>div:nth-of-type(3){
+    color: #8c8c8c;
+    font-size: 0.4rem;
+    line-height: 0.5rem;
+}
+/* 租号时长 */
+.rent_time{
+    padding: 0.2rem;
+    display: flex;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    background-color: #ffffff;
+    margin-top: 0.3rem;
+    font-size: 0.5rem;
+    color: #333333;
+}
+.rent_times{
+    display: flex;
+    margin: 0.3rem;
+}
+.rent_times input{
+    width: 1.5rem;
+    height: 0.8rem;
+    text-align: center;
+    background: url('../images/1402.png') no-repeat;
+    background-size: 1.5rem 0.8rem;
+}
+.rent_times img{
+    width: 0.8rem;
+    height: 0.8rem;
+}
+/* 租金押金 */
+.rent_deposit{
+    background-color: #ffffff;
+    margin-top: 0.3rem;
+}
+.rent_deposit>div{
+    align-items: center;
+    font-size: 0.5rem;
+    line-height: 0.5rem;
+    color: #333333;
+    text-indent: 0.25rem;
+    height: 0.5rem;
+    padding: 0.6rem 0;
+    border-top: 0.02rem solid #f2f2f2;
+}
+.rent_deposit>div>span{
+    color: #ff4538;
+}
+
+/* 支付方式 */
+.noAuthorization{
+    background-color: #ffffff;
+    margin: 0.3rem 0 0.3rem 0;
+}
+
+.depositNeed{
+    display: flex;
+    justify-content: space-between;
+}

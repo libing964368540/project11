@@ -1,0 +1,127 @@
+.tab_order{
+    color: red
+}
+
+.head_nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0.45rem;
+    border-bottom: 0.4rem solid #f2f2f2;
+}
+
+.head_nav > div{
+    font-size: 0.45rem;
+    color: #999999;
+    line-height: 1.2rem;
+    text-align: center;
+    border-bottom: 0.08rem solid transparent;
+}
+
+.choosedNav{
+    display: flex;
+    border-color: #ff4532 !important;
+    color: #ff4532 !important;
+}
+
+#orderList{
+    background: #f2f2f2;
+    /* padding: 0 0.3rem; */
+    overflow: scroll;
+}
+
+.order_box{
+    position: relative;
+    margin-bottom: 0.4rem;
+    box-shadow: -1px 5px 10px 2px #dddddd;
+    background: #ffffff;
+}
+
+.orderState{
+    width: 0.1rem;
+    height: 2rem;
+    background: #999;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* .bg_red{
+    background: #ff4532;
+}
+.bg_green{
+    background: #20cfca;
+}
+.bg_gray{
+    background: #999;
+}
+.co_red{
+    color: #ff4532;
+}
+.co_green{
+    color: #20cfca;
+}
+.co_gray{
+    color: #999;
+} */
+
+
+/* .order_head{
+    margin: 0 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.4rem;
+    line-height: 0.64rem;
+    padding-top: 0.1rem;
+} */
+.order_head img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.order_main{
+    display: flex;
+    padding: 0.25rem  0 0.35rem 0;
+    margin:  0 0.3rem;
+    /* border-top:0.02rem solid #f2f2f2;
+    border-bottom:0.06rem solid #f2f2f2; */
+
+}
+
+.game_type >img {
+    display: block;
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-right: 0.4rem;
+}
+
+.order_info{
+    font-size: 0.36rem;
+    color: #777575;
+    line-height: 0.5rem;
+    
+}
+.order_info>div:nth-of-type(1){
+    height: 1rem;
+    line-height: 0.5rem;
+    white-space: normal;
+    overflow: hidden;
+    color: #333333;
+    font-size: 0.45rem;
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+    padding-right: 1rem;
+}
+
+.foot_price {
+    color: #ff4532;
+    font-size: 0.45rem;
+}
+
+.order_foot{
+    width: 7rem;
+    display: flex;
+    justify-content: space-between;
+}

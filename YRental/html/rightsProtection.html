@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size:27vw;background: #ffffff">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="divport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/config.css?v=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../css/rightsProtection.css">
+    <title>订单维权</title>
+</head>
+
+<body style="font-size: 16px">
+    <!-- 加载动画 -->
+    <div class="spinner">
+        <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </div>
+    <!-- 页面内容 -->
+    <div class="content">
+        <div class="row_1">租客违规类型(可多选)</div>
+        <div class="choosedRow">
+            <div class="typeChoosedBg" val="5">账号密码错误</div>
+            <div class="typeChoosedBg" val="6">登录受限</div>
+            <div class="typeChoosedBg" val="7">信息不符</div>
+            <div class="typeChoosedBg" val="8">信誉分不够</div>
+            <div class="typeChoosedBg" val="4">其他</div>
+        </div>
+        <div class="row_1">违规描述</div>
+        <div class="row_textarea">
+            <textarea class="textA" name="RpDes" id="" maxlength="250" placeholder="请描述违规内容"></textarea>
+        </div>
+        <div class="row_2">
+            <div>违规凭证</div>
+            <div class="linkRP">维权需要哪些凭证</div>
+        </div>
+        <div class="row_img" id="fileListDom">
+        </div>
+    </div>
+    <div class="btnRp" onclick="addRProtection()">开始维权</div>
+    <script src="../js/config.js?v=3"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/arttemplate.js"></script>
+    <!-- 图片上传 ============================================================================-->
+    <script id='fileList' type="text/html">
+        <%for(var i in data){%>
+
+            {{if data[i]=="4" || data[i]==8}}
+            <div style="margin: 0 0 1.5vw 0;" class="cell_img" onclick="document.querySelector('#inputImageFile_{{data[i]}}').click()" )>
+                <img id="inputImageFile_{{data[i]}}_img" src="../images/camera_add.png" alt="">
+            </div>
+            {{else}}
+            <div class="cell_img" onclick="document.querySelector('#inputImageFile_{{data[i]}}').click()" )>
+                <img id="inputImageFile_{{data[i]}}_img" src="../images/camera_add.png" alt="">
+            </div>
+            <!-- multiple="multiple" capture=camera -->
+            {{/if}}
+            {{if userAType==1}}
+            <!-- 微信 -->
+            <input type="file" id="inputImageFile_{{data[i]}}" onchange="loadImage(this)"
+            name="RPImage" class="inputfile" style="padding-top:5px;border:0;padding-left: 0">
+            {{else {if userAType==2}}
+            <!-- 支付宝 相册选择无法正常使用 换jsapi chooseImage -->
+            <div type="file" id="inputImageFile_{{data[i]}}" onclick="loadImageAli(this)"
+            name="RPImage" class="inputfile" style="padding-top:5px;border:0;padding-left: 0"></div>
+            {{else {if userAType==3}}
+            <input type="file" id="inputImageFile_{{data[i]}}" onchange="loadImage(this)"
+            name="RPImage" class="inputfile" style="padding-top:5px;border:0;padding-left: 0">
+            {{else}}
+            <input type="file" id="inputImageFile_{{data[i]}}" onchange="loadImage(this)" accept="image/jpeg,image/png,image/gif;"
+            name="RPImage" class="inputfile" style="padding-top:5px;border:0;padding-left: 0">
+            {{/if}}
+        <%}%>
+    </script>
+    <script>
+        //显示高度 按钮除外
+        contentHeight = window.innerHeight - $(".btnRp").css("height").split("px")[0];
+        if (contentHeight > 0) {
+            $(".content").css("height", contentHeight)
+        }
+        var userAType = 0;
+        function isAndroid_ios() {
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器 
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 
+            return isAndroid == true ? true : false;
+        }
+        //浏览器判断
+        if (/MicroMessenger/.test(window.navigator.userAgent)) {
+            userAType = 1;
+            // alert('微信');
+        } else if (/AlipayClient/.test(window.navigator.userAgent)) {
+             // alert('支付宝');
+            if(isAndroid_ios()){
+                userAType = 2;
+            }else{
+                userAType = 3;
+            }    
+        } else {
+            userAType = 0;
+            // alert('其他浏览器');
+        }
+        //图片列表
+        var fileList = [];
+        fileList.data = [1, 2, 3, 4, 5, 6, 7, 8]
+        fileList.userAType = userAType;
+        var html = template('fileList', fileList);
+        document.getElementById('fileListDom').innerHTML = html;
+    </script>
+    <script src="../js/rightsProtection.js?v=1"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size:10vw;background: #f2f2f2">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bindingPhone.css?v=1">
+    <link rel="stylesheet" href="../css/config.css?v=1">
+    <title>易租号</title>
+</head>
+
+<body>
+
+  <div class="bg">
+    <span>绑定手机号</span>
+  </div>
+    <div class='row'>
+      <input placeholder='请输入手机号' name='phone' class='phone' maxlength='11' ng-pattern="/[^a-zA-Z]/" onkeyup="value=value.replace(/[^\d]/g,'')"></input>
+      <div class="code">
+        <input placeholder='验证码' name='verCode' class='verCode' maxlength='6' ng-pattern="/[^a-zA-Z]/" onkeyup="value=value.replace(/[^\d]/g,'')"></input>
+      <button type="button"  class='getVerCode' >获取验证码</button>
+      </div>
+      <button type="button" class='confirm'>确定</button>
+    </div>
+
+
+    <!-- 登录失败 -->
+  <div class="exit_mask">
+    <div class="login_exit">
+        <span id="loginFailed"></span>
+        <button class="exit">确定</button>
+      </div>
+  </div>
+  
+
+
+  
+  <!-- <div class="row_span"><span>点击开始，即表示同意</span><span class="span_xy">《租赁服务协议》</span></div> -->
+  <script src="../js/config.js?v=1"></script>
+  <script src="../js/jquery.js?v=1"></script>
+  <script src="../js/bindingPhone.js?v=1"></script>
+</body>
+</html>

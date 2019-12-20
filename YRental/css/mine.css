@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+html,body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    height: 105vh;
+    position: relative;
+}
+/* 底部导航 */
+.tab_mine{
+    color: red
+}
+
+/* 背景图片 */
+.head_bg{
+    border: 1px solid rgba(227, 111, 103, 0.1);
+    background-image: url(../images/mine_bg.jpg);
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+/* 头像 */
+.img{
+    background-image: url(../images/headPortrait.png);
+    width: 33vw;
+    height: 33vw;
+    background-size: 33vw auto;
+    background-position: 50% 50%;
+    margin: 10vh auto 5vh auto;
+    border-radius: 50%;
+
+}
+
+/* 列表 */
+.mineList img{
+    width: 7vw;
+    height: 7vw;
+}
+.mineList span{
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0 0.5rem;
+}
+.row_1,.row_2,.row_3,.row_4,.row_5{
+    height: 16vw;
+    border-bottom: 1px solid rgb(252, 252, 252);
+    font-size: 0.54rem;
+    font-weight: 300;  
+}
+.row_1{
+    color: rgb(48, 163, 0);
+}
+.row_2{
+    color: rgb(227, 121, 59);
+}
+.row_3{
+     color: rgb(80, 142, 241);
+}
+.row_4{
+    color: rgb(225, 86, 21);
+}
+.row_5{
+    color: rgb(232, 149, 32);
+}
+/* 版本号 */
+.version{
+    width: 100%;
+    position: absolute;
+    bottom: 2.9rem;
+}
+.version p{
+    text-align: center;
+    color: #989898;
+    font-size: 0.35rem;
+    font-weight: 400;
+}

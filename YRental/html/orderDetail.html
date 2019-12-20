@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>租号平台</title>
+    <link rel="stylesheet" href="../css/config.css?v=3">
+    <link rel="stylesheet" href="../css/orderDetail.css?v=3">
+</head>
+
+<body>
+    <!-- head nav -->
+<div class="nowNav">
+        <div class='head_nav'>
+                <div class='choosedNav' id='illegal'>进行中</div>
+                <div id='unpaid'>待处理</div>
+                <div class="unpaid_dot">
+                        <img src="../images/dot.png" alt=".">
+                </div>
+                <div id='all'>全部</div>
+        </div>
+</div>
+<br>
+    <!-- 账号 有缓存 -->
+    <div id="orderDetailDom" style="overflow: auto;-webkit-overflow-scrolling: touch;"></div>
+    <!-- tabar -->
+    <div class="tab_none">
+        <div class='tab_addHeight'></div>
+        <div class='tabbar'></div>
+    </div>
+    <!-- toast -->
+    <!-- 租赁成功 -->
+    <div id="m-toast-pop" class="m-toast-pop">
+        <div class="m-toast-inner">
+            <div class="m-toast-inner-text" id="m-toast-inner-text"></div>
+        </div>
+    </div>
+</body>
+<script src="../js/config.js?v=0"></script>
+<script src="../js/arttemplate.js"></script>
+<script src="../js/jquery.js"></script>
+<script id='rentTem' type="text/html">
+    <div class='wrapper'>
+        <!-- <div class='head'> -->
+            <!-- <div class='head_type'></div> -->
+            <!-- <div class='head_tip'></div> -->
+            <div class='orderNum'>
+                <div>28256<%=data.id%>0</div>
+                <div class='head_type'></div>
+            </div>
+        <!-- </div> -->
+        <!-- 账号 -->
+        <div class="row_rent gradualChange" style="margin:0">
+            <div class="row_left " style='margin-bottom:0;padding-bottom:0.1rem;border:0;'>
+                <div class="rent_img">
+                    <img class="img1" src="https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/wzry.png" alt="">
+                </div>
+                <div class="rent_con" style='background-color:transparent;margin-top: 0;padding-top: 0.4rem'>
+                    <div class="rent_1" style="width:auto">
+                        <%=data.goodTitle%>
+                    </div>
+                    <!-- <div class="rent_2" style="height:0.5rem;">
+                        <div>英雄 </div>
+                        <div class="ratioShow"
+                            style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0)<%=data.heronumberShow%>%, rgb(204, 204, 204) 0%),url(https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/progressBg.png);">
+                        </div>
+                        <div><%=data.heronumberShow%>%</div>
+                    </div> -->
+                    <!-- <div class="rent_2">
+                        <div>皮肤 </div>
+                        <div class="ratioShow"
+                            style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0) <%=data.skinnubmerShow%>%, rgb(204, 204, 204) 0%),url(https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/progressBg.png);">
+                        </div>
+                        <div><%=data.skinnubmerShow%>%</div>
+                    </div> -->
+                </div>
+            </div>
+            <!-- <div class="rent_hr"></div> -->
+            <div style='display:flex;justify-content: space-between;margin-bottom:0.3rem;height:0.5rem;line-height:0.5rem;background:none'>
+                <div style='display:flex;margin-left:0.5rem;background:none'>
+                    <img style='display:block;width:1.5rem;height:0.5rem;margin-right:0.5rem' src="https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/xinyong.png" alt="">
+                    <div class='rent_4l' style='background:none'><%=data.gameSysStr%>/<%=data.accountTypeStr%></div>
+                </div>
+                <div class='rent_4lvip' style='display:flex;margin-left:2.5rem;'>
+                        <div class='rent_4r'><%=data.qualifyStr%></div>
+                        <div class='rent_4level' style='margin-left:0.1rem;'>Vip<%=data.vipGrade%></div>
+                    </div>
+                    <br>
+                    <div class="rent_4" style='display:flex;justify-content:space-between;margin-left:25%;background:none;'>
+                        <div  class='zuLin' style='display:flex;background:none;'>
+                            <div class="num">
+                                <%=data.rentId%>
+                            </div>次租赁</div>
+                            {{if(data.lWeekPrice > 0)}}
+                            <span class="rent_5Red">¥<%=data.lWeekPrice%>/时</span>
+                            {{else if(data.lDayPrice > 0)}}
+                            <span class="rent_5Red">¥<%=data.lDayPrice%>/时</span>
+                            {{else}}
+                            <span class="rent_5Red">¥<%=data.hourPrice%>/时</span>
+                            {{/if}}
+                        </div>
+            </div>
+        
+            
+        </div>
+        <!-- 账号详情 -->
+        <div class='account_detail'>
+            <div>
+                <div>昵称</div>
+                <div class='account_name'><%=data.gameNick%></div>
+            </div>
+            <div>
+                    <div>大区</div>
+                    <div class='account_area'><%=data.gameZone%></div>
+            </div>
+            <div>
+                <div>账号</div>
+                <div class='account_account'><%=data.gameAccount%></div>
+            </div>
+            <div>
+                <div>密码</div>
+                <div class='account_password'>
+                    <div id="password1">********</div>
+                    <div id="password2" style="display:none;"><%=data.accountPassword%></div>
+                    <div class='viewPassword tc'>查看密码</div>
+                </div>
+            </div>
+        </div>
+
+    <!-- 处理违规 -->
+    <div class='illegal' style='display:none;'>
+        <div style="padding: 0.4rem;">
+            <div class='illegal_bar'>
+                <div class='illegal_remark'><%=data.viRemark%></div>
+            </div>
+            <div id='illegal_img'>
+                <%for(var i in data.viImg){%>
+                <div onClick="showImg('https://xcx-evaluation.oss-cn-hangzhou.aliyuncs.com/VIimg/<%=data.viImg[i]%>')">
+                    <img src="https://xcx-evaluation.oss-cn-hangzhou.aliyuncs.com/VIimg/<%=data.viImg[i]%>" alt="">
+                </div>
+                <%}%>
+            </div>
+            <div class='illegal_bar' onclick="viUrl()">
+                <div></div>
+                <div class='illegal_standard'>《易租号平台违规处罚标准》</div>
+            </div>
+        </div>
+    </div>
+        <!-- 订单详情 -->
+        <div class='orderDetail'>
+            <!-- <div>
+                <div class='problem'>常见问题</div>
+                <div class='service' onclick="kefu()">联系客服</div>
+            </div>
+            <div class='tc'>￥ <span><%=data.ShowPrice%></span>元</div> -->
+            <div class='startTime'>
+                    <div>开始时间</div>
+                    <div><%=data.showStartTime%></div>
+            </div>
+            <div class='overTime'>
+                    <div>结束时间</div>
+                    <div><%=data.showEndTime%></div>
+                </div>
+            <!-- <div class='ordetPrice'>
+                <div>按时计费</div>
+                <div><%=data.hourPrice%>元/小时</div>
+            </div> -->
+            <div class='orderTime'>
+            <% if(data.ulStart==1){%>
+                <div>已用时</div>
+                <div><%=data.diffTime%></div>
+            <% }else{%>
+                <div>用时</div>
+                <div><%=data.diffTime%></div>
+            <% }%>
+            </div>
+            <div class='ordetPrice'>
+                <div>订单租金</div>
+                {{if(data.ulStart==6)}}
+                <div>￥<%=data.ShowPrice%></div>
+                {{else}}
+                <div style='color:#ff4538;'>￥<%=data.ShowPrice%></div>
+                {{/if}}
+            </div>
+            <!-- <div class='orderNum'>
+                <div>订单编号</div>
+                <div>28256<%=data.id%>0</div>
+            </div> -->
+            <div class='PayRentTradeNo' style="display:none;">
+                <div>支付宝单号</div>
+                <div><%=data.rentTradeNo%></div>
+            </div>
+            <div class='penalty' style="display:none;">
+                <div>处罚金额</div>
+                <div style='color:#ff4538;'>￥<%=data.penalty%></div>
+            </div>
+            <div class='rentTradeNo' style="display:none;">
+                <div>处罚订单号</div>
+                <div><%=data.rentTradeNo%></div>
+            </div>
+        </div>
+        <div class='orderDetailbtn tc' >
+            <div class='problem' style='display:none;'>常见问题</div>
+            <div class='service'></div>
+            <div class='orderDetail_btn'>
+                <div class='orderDetail_btn_text'>结束租赁</div>
+            </div>
+        </div>
+    </div>
+    <!-- 遮罩 -->
+    <div class='shade'></div>
+    <!-- 处理违规 -->
+    <!-- <div class='illegal'>
+        <div style="padding: 0.4rem;">
+            <div>账号违规详情</div>
+            <div id='illegal_img'>
+                <%for(var i in data.viImg){%>
+                <div onClick="showImg('https://xcx-evaluation.oss-cn-hangzhou.aliyuncs.com/VIimg/<%=data.viImg[i]%>')">
+                    <img src="https://xcx-evaluation.oss-cn-hangzhou.aliyuncs.com/VIimg/<%=data.viImg[i]%>" alt="">
+                </div>
+                <%}%>
+            </div>
+            <div class='illegal_bar'>
+                <div>违规描述</div>
+                <div><%=data.viRemark%></div>
+            </div>
+            <div class='illegal_bar'>
+                <div>处罚金额</div>
+                <div class='illegal_price'><%=data.penalty%>元</div>
+            </div>
+            <div class='illegal_bar' onclick="viUrl()">
+                <div>处罚标准</div>
+                <div class='illegal_standard'>《易租号平台违规处罚标准》</div>
+            </div>
+            <div class='payType' id='zfb'>
+                <div style="display:flex;align-items: center;">
+                    <img src="../images/zhifubao.png" alt="">
+                    <div>支付宝支付</div>
+                </div>
+                <div class='ischoose choosedPay' ></div>
+            </div>
+            <div class='pay_btn tc illegal_pay' onclick="ViPay()">立即付款</div>
+        </div>
+    </div> -->
+    <!-- 订单支付 -->
+    <div class='order_pay'>
+        <div style="padding:0.4rem">
+            <div>订单编号：151531513</div>
+            <div class='tc'>共 <span style="font-size: 0.7rem;color: #333333;"><%=data.ShowPrice%></span>元</div>
+            <div class="pay_bar">
+               <div>按时计费</div>
+               <div class='pirce_hour'><%=data.hourPrice%>元/小时</div>
+            </div>
+            <div class="pay_bar">
+                <div>用时</div>
+                <div class='order_time'><%=data.diffTime%></div>
+            </div>
+            <div class='payType' id='zfb'>
+                <div style="display:flex;align-items: center;">
+                    <img src="../images/zhifubao.png" alt="">
+                    <div>支付宝支付</div>
+                </div>
+                <div class='ischoose choosedPay'></div>
+            </div>
+            <div class='pay_btn tc pay_order' onclick="endAndPay()">立即付款</div>
+        </div>
+    </div>
+</script>
+<!-- 违规大图弹出层 -->
+<div class='vlImg'>
+    <img src="" alt="">
+</div>
+
+<!-- 结束租赁 -->
+<div class="exit_mask">
+    <div class="login_exit">
+        <div id="loginFailed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;租赁结束后账号将无法继续使用，是否立即结束订单</div>
+        <div class="exit_goon">
+            <button class="exit">取消</button>
+            <button class="goon" onclick="endAndPay()">确认</button>
+        </div>
+      </div>
+  </div>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script src="../js/orderDetail.js?v=3"></script>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>租号平台</title>
+    <link rel="stylesheet" href="../css/config.css?v=3">
+    <link rel="stylesheet" href="../css/accountDetail.css?v=3">
+    <!-- <script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.inc.min.js"></script> -->
+    <style>
+        .detailBG{
+            background: url("../images/new/detailBG.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            height: 6rem;
+
+        }
+        .detailDW{padding: 0.4rem 0.3rem}
+        .detailDW >div{
+            font-size: 0.4rem;
+            margin: 0.1rem 0;
+        }
+        .paiwei{background: url(../images/new/ispaiwei.png);
+            background-size: cover;
+            width: calc(100% - 0.8rem);
+            line-height: 1.2rem;
+            font-size: 0.35rem;
+            padding: 0 0 0 0.5rem;
+            height: 1.0rem}
+        /*#rentDom{*/
+            /*margin-top: 4rem;*/
+            /*border-top-left-radius: 0.5rem;*/
+            /*border-top-right-radius: 0.5rem;*/
+            /*overflow: hidden;*/
+        /*}*/
+    </style>
+</head>
+
+<body style="background: rgba(0,0,0,0)">
+    <!-- 加载动画 -->
+    <div class="spinner">
+        <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </div>
+    <!-- 加载动画 END -->
+        <div id="rentDom"></div>
+
+    <!-- toast -->
+    <div id="m-toast-pop" class="m-toast-pop">
+        <div class="m-toast-inner">
+            <div class="m-toast-inner-text" id="m-toast-inner-text"></div>
+        </div>
+    </div>
+    <script src="../js/config.js?v=1"></script>
+    <script src="../js/arttemplate.js?v=1"></script>
+    <script src="../js/jquery.js"></script>
+    <script id='heroIconBox_at' type="text/html">
+        <% for(var i in data.id){%>
+            <div class='heroItem'>
+                <!--<div class='heroIcon'>-->
+                    <!--<img src="https://xcx-evaluation.oss-cn-hangzhou.aliyuncs.com/yHSimg/<%=data.Hi[i]%>" alt="">-->
+                <!--</div>-->
+                <div style="width: 1.6rem;margin:  0 auto; border-radius: 0.3rem;overflow: hidden;">
+                    <img src="https://xcx-evaluation.oss-cn-hangzhou.aliyuncs.com/yHSimg/<%=data.Hi[i]%>" alt="" style="width: 1.6rem;height: 1.6rem">
+            </div>
+                <div class='tc' style="font-weight: bold;margin: 0.2rem 0">
+                    <%=data.Hn[i]%>
+                </div>
+            </div>
+        <%}%>
+    </script>
+    <script id='skinIconBox_at' type="text/html">
+        <%for(var i in data.id){%>
+            <div class='skinItem'>
+                <div class='skinIcon'>
+                    <img src="https://xcx-evaluation.oss-cn-hangzhou.aliyuncs.com/yHSimg/<%=data.Si[i]%>" alt="">
+                </div>
+                <div class='tc'>
+                    <%=data.Sn[i]%>
+                </div>
+            </div>
+        <%}%>
+    </script>
+    <!-- 账号信息 -->
+    <script id='rentTem' type="text/html">
+        <div class="detailBG"></div>
+        <div style="margin-top: -2rem;border-top-left-radius: 0.5rem;border-top-right-radius: 0.5rem;overflow: hidden">
+        <div class="row_rent" style="box-shadow:none;margin-bottom: 0">
+            <div class="row_left" style="border:0;">
+                <div class="rent_img" style="width:20%">
+                    <img class="img1" style="margin-left:0" src="../images/new/listbg.png" alt="">
+                    <!--<img class="img1" style="margin-left:0" src="https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/wzry.png" alt="">-->
+                    <!--<img class="img2" style="margin-left:0.2rem" src="https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/xinyong.png" alt="">-->
+                </div>
+                <div class="rent_con" style="margin-top:0.3rem;background: none;width: 80%">
+                    <div class="rent_1" style="width:7.6rem">
+                        <%=data.goodTitle%>
+                    </div>
+                    <div class="rent_3 detailTipsBox" style="margin-top:0.2rem">
+                        <span>手游</span>
+                        <span><%=data.gameTypeStr%></span>
+                        <span><%=data.gameSysStr%></span>
+                        <span><%=data.accountTypeStr%></span>
+                    </div>
+                    <div class="rent_2" style="display: flex;margin-top: 0.2rem">
+                        <div class="rent_4" style="flex: 2;text-align: left"><span class="rent_5Red">¥ <span style="font-size: 0.52rem"> <%=data.hourPrice%></span>/小时</span></div>
+                        <div class="rent_4" style="flex: 2;text-align: right;padding:0.05rem 0.5rem 0 0"><i style="height: 0.36rem;width: 0.3rem;background: url('../images/new/cishu.png');display: inline-block;background-size: cover;margin-bottom:-0.05rem"></i>&nbsp;<%= data.numRan %>次租赁</div></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div style="padding: 0.3rem;border-top: 1px solid #f1f1f1">
+            <div style="display: flex;">
+                <div style="flex: 2;display: flex">
+                    <div>
+                        <img src="../images/new/dqt.png" alt="" style="width: 1.6rem">
+                    </div>
+                    <div class="detailDW">
+                        <div>段位</div>
+                        <div style="font-weight: bold">{{data.dan}}&nbsp;&nbsp;<%=data.vipGrade%>星</div>
+                    </div>
+                </div>
+                <div style="flex: 2;display: flex">
+                    <div class="detailDW" style="width: 33%">
+                        <div>英雄</div>
+                        <div style="font-weight: bold"><%=data.heronumber%></div>
+                    </div>
+                    <div class="detailDW" style="width: 33%">
+                        <div>铭文</div>
+                        <div style="font-weight: bold">150</div>
+                    </div>
+                    <div class="detailDW" style="width: 33%">
+                        <div>皮肤</div>
+                        <div style="font-weight: bold"><%=data.skinnubmer%></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!--<img src="../images/new/ispaiwei.png" alt="" style="" >-->
+                <div class="paiwei"> <span style="color: #e54101">该账号<%=data.isqualify==1?'禁止排位':'可以排位'%></span></div>
+            </div>
+        </div>
+        <div style="display: flex;padding:0.3rem 0.4rem;font-size: 0.4rem">
+            <div style="flex: 2">押金</div>
+            <div style="flex: 2;text-align: right;font-weight: bold">押金¥&nbsp;<%=data.deposit%> <img src="../images/new/wenhao.png" alt="" style="height: 0.4rem;width: 0.4rem"></div>
+        </div>
+        <div style="display: flex;padding:0.3rem  0.4rem;font-size: 0.4rem">
+            <div style="flex: 2">上号方式</div>
+            <div style="flex: 2;text-align: right;font-weight: bold">明文账号密码&nbsp;</div>
+        </div>
+        <!--<div class='headBox'>-->
+            <!--<div class="headBox_l">-->
+                <!--<div class='headBox_circle tc' style="top:0;right:0"><span class="cirlceNum"><%=data.gameGrade%></span><br/>信誉</div>-->
+                <!--<div class='headBox_line_l'></div>-->
+                <!--&lt;!&ndash; 暂时默认150 &ndash;&gt;-->
+                <!--<div class='headBox_circle tc' style="bottom:0;left:0"><span class="cirlceNum">150</span><br/>铭文</div>-->
+            <!--</div>-->
+        <!--<div class="headBox_c" style='background-image:url(../images/detail_center<%=data.vipGrade%>.png)'>-->
+            <!--<div class='danImg'><img src="<%=data.danImg%>" alt=""></div>-->
+            <!--<div class='dantext'>{{data.dan}}</div>-->
+            <!--<% if(data.isqualify==1){%>-->
+                <!--&lt;!&ndash; 禁止 &ndash;&gt;-->
+                <!--<div class='rankImg'><img src="../images/cantrank.png" alt=""></div>-->
+            <!--<% }else{%>-->
+                <!--&lt;!&ndash; 允许 &ndash;&gt;-->
+                <!--<div class='rankImg'><img src="../images/canrank.png" alt=""></div>-->
+            <!--<% }%>-->
+        <!--</div>-->
+            <!--<div class="headBox_r">-->
+                <!--<div class='headBox_circle tc' style="top:0;left:0"><span class="cirlceNum"><%=data.heronumber%></span><br/>英雄</div>-->
+                <!--<div class='headBox_line_r'></div>-->
+                <!--<div class='headBox_circle tc' style="bottom:0;right:0"><span class="cirlceNum"><%=data.skinnubmer%></span><br/>皮肤</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class='tips'>-->
+            <!--<div>-->
+                <!--<span><%=data.deposit/100%></span>-->
+                <!--<img src="../images/wenhao.png" alt="">-->
+            <!--</div>-->
+            <!--<div>上号方式：明文账号密码</div>-->
+        <!--</div>-->
+        <div class='heroBox' style="border-top: 0.2rem solid #f5f5f5">
+            <div class='heroSkinBox_top'>
+                <div style="font-weight: bold">英雄</div>
+                <div onclick="toHeroList()">
+                    <p>全部</p>  
+                    <img src="../images/jiantou_r.png" alt="">
+                </div>
+            </div>
+            <div id='heroIconBox'></div>
+        </div>
+    
+        <div class='skinBox'>
+            <div class='heroSkinBox_top'>
+                <div style="font-weight: bold">皮肤</div>
+                <div onclick="toHeroList()">
+                    <p>全部</p>
+                    <img src="../images/jiantou_r.png" alt="">
+                </div>
+            </div>
+            <div id='skinIconBox' style="font-weight: bold"></div>
+        </div>    
+        <div class='shadow'></div>
+        <div class='choosePayType'>
+            <div class="row_rent1" style="box-shadow:none;margin: 0">
+                <!-- <div class="row_left" style="border:0;margin: 0 0.3rem">
+                    <div class="rent_img" style="width:20%">
+                        <img class="img1" style="margin-left:0" src="https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/wzry.png"alt="">
+                        <img class="img2" style="margin-left:0.2rem"src="https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/xinyong.png" alt="">
+                    </div>
+                    <div class="rent_con" style="background: none;width: 75%">
+                        <div class="rentTitle">
+                            <%=data.goodTitle%>
+                        </div> -->
+                        <!-- <div class="rent_2" style="height:0.5rem;">
+                            <div>英雄 </div>
+                            <div class="ratioShow"
+                                style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0)80%, rgb(204, 204, 204) 0%),url(https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/progressBg.png);">
+                            </div>
+                            <div>80%</div>
+                        </div>
+                        <div class="rent_2">
+                            <div>皮肤 </div>
+                            <div class="ratioShow"
+                                style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 80%, rgb(204, 204, 204) 0%),url(https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/progressBg.png);">
+                            </div>
+                            <div>80%</div>
+                        </div>
+                        <div class="rent_3">
+                            <span style="padding: 0.02rem calc(0.1rem + 1em)">手游</span>
+                            <span><%=data.gameTypeStr%></span>
+                            <span><%=data.gameSysStr%></span>
+                            <span><%=data.accountTypeStr%></span>
+                            <span><%=data.qualifyStr%></span>
+                        </div> -->   
+                    <!-- </div>
+                        <div class='rent_4l' style='background:none'><%=data.gameSysStr%>/<%=data.accountTypeStr%></div>
+                        <div class='rent_4lvip' style='display:flex;margin-left:2.5rem;'>
+                                <div class='rent_4r'><%=data.qualifyStr%></div>
+                                <div class='rent_4level' style='margin-left:0.1rem;'>Vip<%=data.vipGrade%></div>
+                            </div>
+                            <div class="rent"><div class='zuLin' style='display:flex;background:none;'><div class="num"><%=data.rentId%></div>次租赁</div></div>
+                </div> -->
+                <div class='rent_way'>
+                    <div class='rent_way1'>
+                        租号方式：<img src="../images/dianzuhao.png" alt="">立即租号
+                    </div>
+                    <div>
+                        <div class="choosedRow rent_way2">
+                            <div class="typeChoosedBg typeChoosed type0" val="0">
+                                <div>￥<%=data.hourPrice%></div>
+                                <div>- 时租 -</div>
+                                <div>3小时起</div>
+                            </div>
+                            <div class="typeChoosedBg type1" val="1">
+                                    <div>￥<%=data.dayPrice%></div>
+                                    <div>- 日租 -</div>
+                                    <div>24小时</div>
+                            </div>
+                            <div class="typeChoosedBg type2" val="2">
+                                    <div>￥<%=data.nightPrice%></div>
+                                    <div>- 周租 -</div>
+                                    <div>7天</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='rent_time'>
+                    租号时长：<div class='rent_times'><img class='subtraction' src="../images/1401.png" alt=""><input type="text" value='3' name="Addnumber" id="Addnumber" maxlength='6'  oninput="if(value>100000)value=100000"  oninput="value=value.replace(/[^\d]/g,'')"><img class='addition' src="../images/1403.png" alt=""></div>小时
+                </div>
+
+                 <div class='rent_deposit'>
+                    <div>
+                        所需租金：<span class='rentDeposit'>￥<%=data.hourPrice*2%></span>
+                    </div>
+                    <div class='depositNeed'>
+                        <div>
+                            所需押金：<span style='color:#ff4538;'>￥<%=data.deposit%></span>
+                        </div>
+                        <div style='font-size: 0.3rem;padding-right:0.2rem;'>押金将于订单结束后退回余额</div>
+                    </div>
+                </div>
+
+                <div class='noAuthorization'>
+                        <!-- <div class='rentInfo_tip' style="padding-bottom: 0.1rem;">订单最低金额5元</div> -->
+                        <!-- <div class='rentInfo_tip'>押金将于订单完成48小时内自动退还</div> -->
+                        <div class='payType' id='zfb'>
+                            <div style="display:flex;align-items: center;">
+                                <img src="../images/zhifubao.png" alt="">
+                                <div>支付宝支付</div>
+                            </div>
+                            <div class='ischoose choosedPay' ></div>
+                        </div>
+                        <div class='payType' id='wxzf' style='display:none;'>
+                            <div style="display:flex;align-items: center;">
+                                <img src="../images/weixin.png" alt="">
+                                <div>微信支付</div>
+                            </div>
+                            <div class='ischoose'></div>
+                        </div>
+                        <div class='payType' id='yue'>
+                            <div style="display:flex;align-items: center;">
+                                <img src="../images/mine_1.png" alt="">
+                                <div>余额支付</div><p>余额:<div class='userBalance'></div>元</p>
+                            </div>
+                            <div class='ischoose' ></div>
+                        </div>
+                </div>
+
+
+                <!-- <div class='rentInfo'>
+                    <div><span>8小时</span><br/>可租时长</div>
+                    <div><span>29.00元</span><br/>预付押金</div>
+                    <div><span><%=data.hourPrice%>元/小时</span><br/>按时计费</div>
+                </div>  -->
+                
+                <!-- <% if(data.UserDep==1){%> -->
+                <!-- 已授权 -->
+                <!-- <div class='Authorization tc'>
+                    <img style='width:3rem;height:3rem;margin-bottom:0.5rem;' src="../images/authorization.png" alt="√">
+                    <div class='rentInfo_tip' style="padding-bottom: 0.1rem;">订单最低金额5元</div>
+                    <div class='rentInfo_tip'>押金已交，将于订单完成48小时内自动退还</div>
+                </div> -->
+                <!-- <% }else{%> -->
+                <!-- 未授权 -->
+                <!-- <div class='noAuthorization'> -->
+                    <!-- <div class='rentInfo_tip' style="padding-bottom: 0.1rem;">订单最低金额5元</div> -->
+                    <!-- <div class='rentInfo_tip'>押金将于订单完成48小时内自动退还</div> -->
+                    <!-- <div class='payType' id='zfb'>
+                        <div style="display:flex;align-items: center;">
+                            <img src="../images/zhifubao.png" alt="">
+                            <div>支付宝支付</div>
+                        </div>
+                        <div class='ischoose' ></div>
+                    </div>
+                    <div class='payType' id='zmxy'>
+                        <div style="display:flex;align-items: center;">
+                            <img src="../images/zhimaxinyong.png" alt="">
+                            <div>余额支付</div><p>余额：</p>
+                        </div>
+                        <div class='ischoose choosedPay' ></div>
+                    </div>
+                </div> -->
+                <!-- <% }%> -->
+
+                <div class='btnBox'>
+                    <div class='btn_cancel'>
+                        <div class='tc cancel'>总计：<span style='color:#ff4538;'>￥</span><div class='fontcolor'></div></div>
+                    </div>
+                    <div class='tc confirm'>确认租赁</div>
+                </div>
+            </div>
+        </div>
+
+        <!--文明租号约定  -->
+        <div class='rentAppoint'>
+            <div class='rentAppoint_title'>文明租号约定</div>
+            <div class='rentAppoint_mean'>文明租号</div>
+            <ul>
+                <li>合理游戏，不随意使用账号内物品</li>
+                <li>尊重号主制定的使用要求</li>
+            </ul>
+            <div class='rentAppoint_mean'>不文明租号</div>
+            <ul>
+                <li>使用影响账号安全的第三方程序</li>
+                <li>私自将账号分享给他人</li>
+                <li>恶意破坏账号内物品</li>
+            </ul>
+            <div class='rentAppoint_lookfor'>查看<a href="">《易租号服务协议》</a></div>
+            <div class='rentAppoint_btnBox'>
+                <div class='unAgree'>不同意</div>
+                <div class='agree'>同意</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </script>
+    <!-- toast -->
+    <!-- 租赁成功 -->
+    <div id="m-toast-pop" class="m-toast-pop">
+        <div class="m-toast-inner">
+            <div class="m-toast-inner-text" id="m-toast-inner-text"></div>
+        </div>
+    </div>
+    <div class='rentNow tc'>立即租号</div>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="../js/accountDetail.js?v=3"></script>
+</body>
+</html>

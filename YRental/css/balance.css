@@ -1,0 +1,41 @@
+.sumBg{
+    color: #ffffff;
+    width: 100%;
+    height: 6rem;
+    /* border: 1px solid black; */
+    background: linear-gradient(rgb(52,150,255),rgb(116, 198, 248));
+}
+.sumBalance{
+    font-size: 0.5rem;
+    padding: 0.2rem 0 0 0.2rem;
+}
+.sum_all{
+    margin: 1rem 0 0 0.5rem;
+    font-size: 2.5rem;
+}
+.rowList{
+    width: 95%;
+    height: 2rem;
+    border-bottom: 1px solid rgb(238, 239, 240) ;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.balanceBstate{
+    line-height: 1rem;
+    padding: 0.2rem 0 0 0.2rem;
+    font-size: 0.54rem;
+    color: #333333;
+}
+.balanceTime{
+    line-height: 0.7rem;
+    font-size: 0.4rem;
+    padding-left: 0.2rem;
+    color: rgb(130, 132, 133)
+}
+.balanceAmount{
+    padding-right: 0.2rem;
+    display: flex;
+    line-height: 2rem;
+}

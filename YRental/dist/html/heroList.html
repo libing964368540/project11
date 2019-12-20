@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>租号平台</title><link rel=stylesheet href=../css/config-9876c8ee7b.css?v1><link rel=stylesheet href=../css/heroList-44dfc84392.css?v1><style>
+        .shadow{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% - 0.22rem);
+            height: 100%;
+            background: #8d8d8d;
+            line-height: 100%;
+        }
+    </style></head><body><div id=heroSkinBox></div></body><script src=../js/config-54dc648f3c.js></script><script src=../js/arttemplate-41a9c2aec7.js></script><script src=../js/jquery-8441b831e9.js></script><script id=heroSkinBox_at type=text/html><%for(var i in data){%> <div class='hreoBox'> <div class='hreoBox_icon'> <img src="<%=data[i].hImg%>" alt=""> </div> <div class='hreoBox_info'> <div class='hreoBox_name' style="font-weight: bold">{{data[i].hDes}}&nbsp;&nbsp;<span>({{data[i].SkinNumber}}/{{data[i].SkinAll}})</span></div> <div class='hreoBox_skin'> <%for(var j in data[i].skin){%> <div style='position:relative'> {{if data[i].skin[j].sImg==1}} <img class='hreoBox_skinImg' src="" alt="" style="background: #444;"> <div class="shadow"> <div style="position: absolute;top:40%;left: 0;width: 100%;text-align: center;color: white;font-size: 0.3rem">未拥有</div> </div> {{else}} <img class='hreoBox_skinImg' src="<%=data[i].skin[j].sImg%>" alt=""> {{/if}} <div class='hreoBox_skinName'>{{data[i].skin[j].sDes}}</div> </div> <%}%> </div> </div> </div> <%}%></script><script src=../js/heroList-1b433f88a1.js?v1></script></html>

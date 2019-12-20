@@ -1,0 +1,134 @@
+*{-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;}
+/*  */
+.row_1 {
+  color: #666;
+  font-size: 4.3vw;
+  margin: 3vw 0vw 3vw 3vw;
+}
+
+.row_2 {
+  color: #666;
+  font-size: 4.3vw;
+  margin: 3vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 维权说明连接 */
+.linkRP {
+  color: #0088d6;
+  text-decoration: underline;
+}
+
+/* 类型选择 */
+.choosedRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 2vw;
+}
+
+.typeChoosedBg {
+  border-radius: 0.08rem;
+  font-size: 4vw;
+  text-align: center;
+  color: #333333;
+  width: 32vw;
+  height: 16vw;
+  line-height: 16vw;
+  background: url(../images/filter_bg3.png)no-repeat;
+  background-size: 28vw 12vw;
+  background-position: 2vw 2vw;
+}
+
+.typeChoosed {
+  background: url(../images/filter_bg4.png)no-repeat;
+  background-size: 28vw 12vw;
+  background-position: 2vw 2vw;
+}
+
+/* 维权说明 */
+.row_textarea {
+  margin: 3vw 3vw;
+}
+
+.textA {
+  width: calc(100% - 8vw);
+  height: 40vw;
+  background: #f2f2f2;
+  padding: 4vw;
+  font-size: 5vw;
+}
+
+.textA::-webkit-input-placeholder {
+  font-size: 5vw;
+}
+
+
+/* 维权图片 */
+.row_img {
+  margin: 3vw 3vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell_img {
+  font-size: 0;
+  width: calc(87.1vw / 4);
+  height: calc(87.1vw / 4);
+  border: 0.2vw dashed #666;
+  margin: 0 1.5vw 1.5vw 0;
+  background: #f2f2f2;
+  text-align: center;
+  line-height: calc(87.1vw / 4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 4 */
+/* .cell_img:nth-child(4)
+{
+  margin: 0 0 1.5vw 0;
+} */
+/* 8 */
+/* .cell_img:nth-child(8)
+{
+  margin: 0 0 1.5vw 0;
+} */
+.cell_img img {
+  width: 50%;
+}
+
+/*  */
+.inputfile {
+  display: none;
+}
+/* 按钮以外主要内容 */
+.content{
+  height: calc(100vh - 13vw);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.btnRp{
+  color: #ffffff;
+  height: 13vw;
+  line-height: 13vw;
+  background: #ff4538;
+  width: 100%;
+  font-size: 5vw;
+  font-weight: bolder;
+  text-align: center;
+}
+
+/* 状态颜色 */
+.col_red {
+  color: #ff0100;
+}
+
+.col_39a {
+  color: #39a7ff;
+}
+
+.col_999 {
+  color: #999;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>租号平台</title>
+    <link rel="stylesheet" href="../css/config.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <!-- head -->
+    <div class='head'>
+        <div style="height:0.33rem;background: 0"></div>
+        <div class='search'>
+            输入要搜索的内容
+        </div>
+    </div>
+    <!-- accountList -->
+    <div id="rentDom"></div>
+    <!-- tabbar -->
+    <div class='tab_addHeight'></div>
+    <div class='tabbar'></div>
+</body>
+<script src="../js/config.js"></script>
+<script src="../js/arttemplate.js"></script>
+<script src="../js/jquery.js"></script>
+<!-- 数据列表 -->
+<script id='rentTem' type="text/html">
+    <%for(var i in data){%>
+        <div class="row_rent" onclick='toAccountDeatil()'>
+        <div class="row_left">
+            <div class="rent_img">
+            <img class="img1" src="https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/wzry.png" alt="">
+            <img class="img2" src="https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/xinyong.png" alt="">
+            </div>
+            <div class="rent_con">
+            <div class="rent_hot">
+                <img src="../images/hot.png" alt="">
+            </div>
+            <div class="rent_1">
+                王者荣耀的哈回复哈警方哈佛哈发货就发哈吉啊哈啊啊哈蛤 案件
+            </div>
+            <div class="rent_2" style="height:0.5rem;">
+                <div>英雄 </div>
+                <div class="ratioShow" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0)80%, rgb(204, 204, 204) 0%),url(https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/progressBg.png);"></div>
+                <div>80%</div>
+            </div>
+            <div class="rent_2">
+                <div>皮肤 </div>
+                <div class="ratioShow" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 80%, rgb(204, 204, 204) 0%),url(https://xcx-recharge.oss-cn-hangzhou.aliyuncs.com/YRental/progressBg.png);"></div>
+                <div>80%</div>
+            </div>
+            <div class="rent_3">
+                <span>王者荣耀</span>
+                <span>苹果系统</span>
+                <span>QQ账号</span>
+                <span>可排位</span>
+            </div>
+            </div>
+        </div>
+        <!-- <div class="rent_hr"></div> -->
+        <div style='display:flex;justify-content: space-between;margin-bottom:0.1rem;'>
+            <div class='rent_4l'>已租:100小时&nbsp;&nbsp;好评98%</div>
+            <div class="rent_4"><span class="rent_5Red">¥100</span>/小时</div>
+        </div>
+       
+        </div>
+    <%}%>
+</script>
+<script src="../js/index.js"></script>
+</html>
